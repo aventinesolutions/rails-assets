@@ -18,6 +18,8 @@ gem 'angular-semver-sort-rails'
 gem 'slim-rails'
 gem 'redis',      '~> 3.0.0'
 gem 'redis-rails', '~> 4.0.0'
+gem 'redis-mutex', '~> 3'
+gem 'redis-classy', '~> 1'
 
 gem 'sidekiq', '~> 3.3.2'
 gem 'sidekiq-limit_fetch'
@@ -47,8 +49,6 @@ gem 'awesome_print'
 
 gem 'honey_badger'
 
-gem 'redis-mutex'
-
 gem 'thread', require: 'thread/pool'
 
 gem 'whenever'
@@ -62,6 +62,7 @@ gem 'dotenv'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'geminabox'
 end
 
 group :development, :test do
