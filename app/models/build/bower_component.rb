@@ -30,14 +30,12 @@ module Build
     end
 
     def version
-      if data['pkgMeta']['version']
-        data['pkgMeta']['version']
-      else
-        raise BuildError.new(
-          "#{full_name} has no versions defined. " +
-          "Please create an issue in component's repository."
-        )
-      end
+      version = data['pkgMeta']['version'] || data['pkgMeta']['_release']
+      raise BuildError.new(
+        "#{full_name} has no versions defined. " +
+        "Please create an issue in component's repository."
+      ) unless version
+      version
     end
 
     def description
