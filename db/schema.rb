@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150218105340) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "bower_name"
-    t.index ["name"], :name => "index_components_on_name", :unique => true, :order => {"name" => :asc}
+    t.index ["name"], :name => "index_components_on_name", :unique => true
   end
 
   create_table "failed_jobs", force: true do |t|
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150218105340) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["name"], :name => "index_failed_jobs_on_name", :order => {"name" => :asc}
+    t.index ["name"], :name => "index_failed_jobs_on_name"
   end
 
   create_table "versions", force: true do |t|
@@ -51,14 +51,13 @@ ActiveRecord::Schema.define(version: 20150218105340) do
     t.string   "bower_version"
     t.string   "position",      limit: 1023
     t.boolean  "prerelease",                 default: false
-    t.index ["component_id"], :name => "fk__versions_component_id", :order => {"component_id" => :asc}
-    t.index ["bower_version"], :name => "index_versions_on_bower_version", :order => {"bower_version" => :asc}
-    t.index ["build_status"], :name => "index_versions_on_build_status", :order => {"build_status" => :asc}
-    t.index ["component_id"], :name => "index_versions_on_component_id", :order => {"component_id" => :asc}
-    t.index ["position"], :name => "index_versions_on_position", :order => {"position" => :asc}
-    t.index ["prerelease"], :name => "index_versions_on_prerelease", :order => {"prerelease" => :asc}
-    t.index ["rebuild"], :name => "index_versions_on_rebuild", :order => {"rebuild" => :asc}
-    t.index ["string"], :name => "index_versions_on_string", :order => {"string" => :asc}
+    t.index ["bower_version"], :name => "index_versions_on_bower_version"
+    t.index ["build_status"], :name => "index_versions_on_build_status"
+    t.index ["component_id"], :name => "index_versions_on_component_id"
+    t.index ["position"], :name => "index_versions_on_position"
+    t.index ["prerelease"], :name => "index_versions_on_prerelease"
+    t.index ["rebuild"], :name => "index_versions_on_rebuild"
+    t.index ["string"], :name => "index_versions_on_string"
     t.foreign_key ["component_id"], "components", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_versions_component_id"
   end
 
