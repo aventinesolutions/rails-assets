@@ -5,7 +5,7 @@ module Build
     # Extensions are sorted by priority
     def self.extension_classes
       {
-        javascripts: ['coffee', 'js'],
+        javascripts: ['coffee', 'js', 'dust'],
         stylesheets: ['sass', 'scss', 'less', 'css', 'styl'],
         images: ['png', 'jpg', 'jpeg', 'gif', 'cur', 'ico'],
         fonts: ['woff', 'woff2', 'ttf', 'otf', 'eot', 'svg'],
@@ -17,7 +17,7 @@ module Build
 
     def self.allowed_main_extensions
       {
-        javascripts: ['coffee', 'js'],
+        javascripts: ['coffee', 'js', 'dust'],
         stylesheets: ['sass', 'scss', 'css'],
         images: ['png', 'jpg', 'jpeg', 'gif', 'cur', 'ico'],
         fonts: ['woff', 'woff2', 'ttf', 'otf', 'eot', 'svg'],
