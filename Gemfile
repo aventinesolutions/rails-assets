@@ -1,11 +1,11 @@
-source 'https://rubygems.org'
+source 'http://172.31.33.237:9292'
 
 ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0.2'
 
-gem 'pg'
+gem 'pg', '0.19.0.pre20160131124256'
 gem 'schema_plus'
 
 gem 'sass-rails', '~> 4.0.0'
